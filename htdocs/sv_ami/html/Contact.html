@@ -1,0 +1,215 @@
+
+
+<style>
+    img.icon_website1
+{
+   margin-top: 40px;
+    margin-left: 0px;
+    width: 20%;
+}
+    img.icw2
+{
+   margin-top: 0px;
+    margin-left: 0px;
+    width: 20%;
+}
+        img.icw3
+{
+   margin-top: 20px;
+    margin-left: 0px;
+    width: 20%;
+}
+ .quantity{
+        position: absolute;
+        color:red;
+         font-weight: bold;
+         right:5.3%;
+        font-size: 30px;
+        top:16%;
+    }
+    .asd {
+color: black; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+.asd:hover {
+  color: white;
+  text-decoration: underline;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 255);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 138px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(0, 0, 165);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+
+
+<html>
+<head>
+    <title> Shopping Website </title>
+    <link rel="stylesheet" type="text/css" href="../style/style_contact.css">
+    <body>
+    <div class="top">
+        <p class="b">
+   <?php
+
+session_start();
+$mysqli = new mysqli("localhost", "root", "toor", "demo");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+        
+            
+if (strlen($_SESSION['email'])==0) echo "<a href='http://localhost/html/Login.html' class='asd'>Hello,Sign In</a>";
+    else{
+      echo "Bun venit, "; echo $_SESSION['printname'];
+          if ($_SESSION['email']=='root')
+        {
+            echo"<br><a href='http://localhost/html/DisplayAccounts.html' class='asd'>Administrare Conturi</a>";
+            
+        }
+        echo"<br><a href='http://localhost/Scripts/DeleteActiveSession.php' class='asd'>Logout</a>";
+    }
+
+?>  
+    
+        </p>
+    </div>
+	 <?php
+        if (strlen($_SESSION['cartquantity'])!=0)
+        {
+        echo "<p class='quantity'>";
+        echo $_SESSION['cartquantity'];
+        echo "</p>";
+        }
+        
+        ?>
+        
+    <div>
+            <?php
+   
+       if (strlen($_SESSION['email'])==0) echo "<img src='../images/icon2.jpg' class='icon_website1'>";
+        else if (strcmp($_SESSION['email'],'root')==0) echo "<img src='../images/icon2.jpg' class='icw2'>";
+        else echo "<img src='../images/icon2.jpg' class='icw3'>";
+        
+?>
+         <form method="POST" action="SearchProduct.html">
+            <input type="text"  placeholder="Cauta dupa nume" class="c" autocomplete="off">
+              <?php 
+                if (strlen($_SESSION['email'])==0)
+                {
+                    echo "<img src='../images/av5.png' class='av5'><a href='Login.html' class='Contulmeu'>Contul meu</a>";
+                    echo "<img src='../images/av6.png' class='av6'><a href='Login.html' class='Cosulmeu'>Cosul meu</a>";
+                }
+             else
+             {
+                  echo "<img src='../images/av5.png' class='av5'><a href='ContulMeu.php' class='Contulmeu'>Contul meu</a>";
+                  echo "<img src='../images/av6.png' class='av6'><a href='ShoppingCart.html' class='Cosulmeu'>Cosul meu</a>";
+             }
+             ?>
+        </form>         
+<br>
+         
+<ul class="z">
+  <li class="x"><a  href="../Homepage.php">Acasa</a></li>
+    <li class="x"><a href="../html/Category.html">Categorii</a></li>
+  <li class="x"><a href="../html/Contact.html" class="active">Contact</a></li> 
+  <li class="x"><a href="../html/About.html">Despre noi</a></li> 
+</ul>
+</div>
+   <br>
+        <hr>
+        <div>
+        <p class="a">Contacteaza-ne</p>
+            
+            <p class="id1">Bucura-te de beneficiile contului de client:</p>
+       
+          <p class="id2">- istoricul comenzilor tale online</p>
+            <p class="id2">- plasezi usor si rapid solicitari de retur</p>
+            <p class="id2">- facturi aferente comenzilor online</p>
+            <p class="id2">- gestionezi rapid datele tale de contact: adrese de facturare, adrese de livrare</p>
+        </div><br><br>
+        
+        <div class="ContactBox">
+       
+        <h1 class="tab">Date de contact</h1>
+        <form method="POST" action="../Scripts/SendMessage.php">
+            
+            
+    <table class="tab">
+  <tr>
+    <td> <p class="s1">Nume</p>
+            <input type="text" name="nume" placeholder="Introduceti numele" autocomplete="off" class="s2"></td>
+    <td>   <p class="s1">Prenume</p>
+            <input type="text" name="prenume" placeholder="Introduceti prenumele" autocomplete="off"></td>
+  </tr>
+  <tr>
+    <td> <p class="s1">Telefon</p>
+            <input type="text" name="telefon" placeholder="Introduceti telefonul" autocomplete="off"></td>
+    <td> <p class="s1">Email</p>
+            <input type="text" name="email" placeholder="Introduceti Email-ul" autocomplete="off"></td>
+  </tr>
+        <tr>
+            <td colspan="2"><p class="s1">Mesaj</p>
+             <textarea rows="4" cols="50" name="mesaj"></textarea>
+            </td>
+        </tr>
+</table>
+            <p></p>
+           <input type="submit" name="" value="Trimitere" class="but">
+            <br>
+        </form>
+        </div> 
+        <p class="det1">Detalii contact</p>
+        <p class="det2">Telefon:<br>
+021 9196 - disponibil in toate retelele (tarif normal)<br>
+021 528 9196 - apelabil din orice retea, din tara si din strainatate (tarif normal)</p>
+                   <hr class="line">
+        <p class="det3">Program<br><br>
+Luni – Vineri: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07:00 - 22:00<br>
+Sambata: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;08:00 - 17:00<br>
+Duminica:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inchis<br></p>
+                   <hr class="line2">
+         <p class="det4">Sediul Central<br><br>      
+Adresa:<br>
+Soseaua Bucuresti-Nord, Numarul 10, Corp O1, Voluntari, Judetul Ilfov<br>
+Fax:<br>
+021/319.99.39<br>
+      <hr class="line3">
+        <p class="det5">Vanzari Corporate<br><br>
+            Fax:<br>
+021/319.99.39<br>
+              <hr class="line4">
+      
+
+    </body>
+</head>
+</html>

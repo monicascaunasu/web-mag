@@ -1,0 +1,81 @@
+cat1_1 https://altex.ro/masina-de-spalat-frontala-indesit-iwsne-61253-c-eco-eu-6kg-1200rpm-a-alb/cpd/MSFIWSNE61253/?gclid=Cj0KCQjw4fHkBRDcARIsACV58_FIIiTVE5NTtFXIav4hWUFDteAcgDl9YhhaCbkoNXqc3tfRqdwpyxcaApjJEALw_wcB
+cat1_2 https://altex.ro/masina-de-spalat-frontala-electrolux-ew6s347s-7kg-1400rpm-a-alb/cpd/MSFEW6S347S/
+cat1_3 https://altex.ro/masina-de-spalat-frontala-indesit-iwsne-61253-c-eco-eu-6kg-1200rpm-a-alb/cpd/MSFIWSNE61253/
+cat1_4 https://altex.ro/masina-de-spalat-rufe-cu-uscator-lg-fh4g6tdm2n-8-5kg-1400rpm-a-alb/cpd/MSFFH4G6TDM2N/
+cat1_5 https://altex.ro/masina-de-spalat-rufe-frontala-beko-wre6512bww-6kg-1000rpm-a-alb/cpd/MSFWRE6512BWW/
+cat1_6 https://altex.ro/masina-de-spalat-frontala-indesit-iwsc-51051-5kg-1000rpm-a-alb/cpd/MSFIWSC51051/
+cat1_7 https://altex.ro/masina-de-spalat-frontala-samsung-ww90k6414qx-le-addwash-9kg-1400rpm-a-inox/cpd/MSFWW90K6414QX/
+cat1_8 https://altex.ro/masina-de-spalat-frontala-beko-wtv8744xw0-8kg-1400rpm-a-alb/cpd/MSFWTV8744XW0/
+cat1_9 https://altex.ro/masina-de-spalat-frontala-slim-lg-f2j5wn7s-6-5kg-1200rpm-a-inox/cpd/MSFF2J5WN7S/
+cat1_10 https://altex.ro/masina-de-spalat-rufe-frontala-samsung-ww80j5345fw-le-1200-rpm-8-kg-a/cpd/MSFWW80J5345FW/
+
+cat2_1 https://altex.ro/uscator-de-rufe-aeg-t8dbe48s-8kg-a-alb/cpd/MSUT8DBE48S/
+cat2_2 https://altex.ro/uscator-de-rufe-candy-gvs4h7a1tcex-s-7kg-a-alb/cpd/MSUGVS4H7A1TCEX/
+cat2_3 https://altex.ro/uscator-de-rufe-grundig-gtn37114gp-7kg-b/cpd/MSUTN37114GP/
+cat2_4 https://altex.ro/uscator-de-rufe-bosch-wtw85540eu-hibrid-9kg-a-alb/cpd/MSUWTW85540EU/
+cat2_5 https://altex.ro/uscator-de-rufe-aeg-t8dea68s-8kg-a/cpd/MSUT8DEA68S/
+ 
+
+
+
+<table>
+<?php
+$dbc = new mysqli("localhost", "root", "toor", "demo");
+$sql="Select * from timages";
+$result=mysqli_query($dbc,$sql) or die("error");
+$i=0;
+while($row=mysqli_fetch_assoc($result)){
+    
+    if ($i%4==0) {
+        echo "<tr>";
+    }
+    echo "<br><br>";
+    echo "<td><img src='../uploads/{$row['img']}' alt='{$row['title']}' class='gallery'></td>";
+    
+    if ($i%4==2) {
+        
+        echo"</tr>";
+    }
+    $i++;
+    
+}
+?>
+</table>
+
+
+
+INSERT INTO `cat1` (`codprodus`, `description`, `price`, `capacitatespalare`, `functii`, `vitezacentrifugare`, `consumenergetic`, `consumapa`, `nivelzgomot`, `garantie`, `greutate`, `culoare`, `dimensiune`, `title`) VALUES ('MSFWRE6512BWW', 'Masina de spalat rufe frontala BEKO WRE6512BWW, 6kg, 1000rpm, A+++, alb', '987,90 Lei', '8 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1400', '1088 kWh/an', '8400 l / anual', '48 db', '24', '63,2 kg', 'alb', '60 x 54 x 84', 'cat1_3'),
+('MSFWRE65X2BWW', 'Masina de spalat frontala SAMSUNG WW90K6414QX/LE, Addwash, 9kg, 1400rpm, A+++', '2.099,90 Lei', '8 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1400', '1188 kWh/an', '8400 l / anual', '48 db', '24', '63,2 kg', 'alb', '60 x 54 x 84', 'cat1_4'),
+('MSFZRS6512BWW', 'Masina de spalat rufe frontala SAMSUNG WW80J5345FW/LE, 1300 RPM, 8 kg, A+++, alb', '1.399,90 Lei', '7 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1470', '1488 kWh/an', '8573 l / anual', '68 db', '24', '64,2 kg', 'alb', '60 x 54 x 84', 'cat1_5'),
+('MSFZRS6512BZZ', 'Masina de spalat frontala SAMSUNG WW60J4060LW, 6kg, 1000rpm, A+++, alb', '1.199,90 LeI', '5 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1470', '1488 kWh/an', '8573 l / anual', '68 db', '24', '64,2 kg', 'alb', '60 x 54 x 84', 'cat1_6'),
+('MSFZRS6512BXW', 'Masina de spalat rufe SAMSUNG WW90J5446EW/LE, 9kg, 1400rpm, A+++, alb', '1.999,90 Lei', '7 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1470', '1488 kWh/an', '8573 l / anual', '68 db', '36', '60,2 kg', 'alb', '70 x 55 x 77', 'cat1_7'),
+('MSFJRS6512BWW', 'Masina de spalat rufe frontala WHIRLPOOL FWSG71253WEU, 7kg, 1200rpm, A+++, alb', '1.193,42 Lei', '7 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1470', '1488 kWh/an', '8573 l / anual', '68 db', '24', '64,2 kg', 'alb', '60 x 54 x 84', 'cat1_8'),
+('MSFZRS4512BWW', 'Masina de spalat frontala MYRIA MY1503, 7kg, 1000rpm, A++, alb', '846,92 Lei', '5,4 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1470', '1488 kWh/an', '7704 l / anual', '78 db', '24', '61,2 kg', 'alb', '54 x 54 x 84', 'cat1_9'),
+('MSFZRS6582BWW', 'Masina de spalat rufe cu uscator WHIRLPOOL FWDG96148SBSEU 9/6kg', '1.999,90 Lei', '4 kg', 'Bumbac, Bumbac Eco, Sintetice, Delicate, Lana, Spalare manuala, Camasi, Clatire, Stoarcere si evacuare, Expres super rapid, Expres zilnic, Uscare bumbac, Uscare sintetice, Baby Protect+ [Spalare & Uscare], Spalare si uscare 5kg, Wash&Wear', '1450', '1231 kWh/an', '8643 l / anual', '68 db', '24', '65,8 kg', 'alb', '60 x 54 x 84', 'cat1_10');
+
+INSERT INTO `cat2` (`title`, `codprodus`, `description`, `price`, `tip`, `functii`, `capacitateuscare`, `capacitaterezervor`, `putere`, `consumenergetic`, `nivelzgomot`, `garantie`, `greutate`, `culoare`, `dimensiuni`) VALUES ('cat2_2', 'MSUGVS4H7A1TCEX', 'Uscator de rufe CANDY GVS4H7A1TCEX-S, Slim, 7Kg, A+, alb', '1.899,90 Lei', 'Uscator cu pompa de caldura', 'Senzor de uscare, Optiune start intarziat', '5', '5', '100', '2.45', '67', '24', '42.75', 'alb', '60 x 46 x 84'),
+('cat2_3', 'MSUTN37114GP', 'Uscator de rufe GRUNDIG GTN37114GP, 7Kg, B', '1.599,90 Lei','Uscator cu pompa de caldura', 'Senzor de uscare, Optiune start intarziat', '7', '5.28', '1100', '1.99', '65', '36', '44.3', 'alb', '59.7 x 57.8 x 84.6'),
+('cat2_4', 'MSUWTW85540EU', 'Uscator de rufe BOSCH WTW85540EU, Hibrid, 9Kg, A++, alb','4.799,90 Lei', 'Uscator cu pompa de caldura', 'Optiune start intarziat', '9', '5.28', '900', '2.12', '68', '24', '48.26', 'alb', '59.8 x 59.9 x 84.2'),
+('cat2_5', 'MSUT8DEA68S', 'Uscator de rufe AEG T8DEA68S, 8Kg, A+++', '4.449,90 Lei', 'Uscator cu pompa de caldura', 'Senzor de uscare, Optiune start intarziat', '8', '5.28', '700', '1.99', '68', '24', '43.44', 'alb', '60 x 65 x 85');
+
+INSERT INTO `cat3` (`title`, `codprodus`, `description`, `price`, `tip`, `functii`, `volum`, `consumenergetic`, `capacitatecongelare`, `garantie`, `culoare`, `dimensiuni`) VALUES ('cat3_2', 'CBFGKN16220FX', 'Combina frigorifica NoFrost GRUNDIG GKN 16220 X, 354 l, 201 cm, A++, inox', '2.399,92L Lei', 'Combina frigorifica', 'Duo-Cooling No Frost; Volum compartiment SuperFresh - 25l, Filtru anti-miros, Tehnologie IonFresh, Garnitura anti-bacteriana', '400', '273', '5', '36', 'Inox', '59.5 x 65 x 201'),
+('cat3_3', 'CBFRB33J3030SA', 'Combina frigorifica SAMSUNG RB33J3030SA/EF, 328 l, 185 cm, A+, gri', '1.649,90 Lei', 'Combina frigorifica', 'Alarma usa', '350', '280', '5', '24', 'Inox', '59.5 x 60.2 x 185'),
+('cat3_4', 'CBFRL4353RBASL', 'Combina frigorifica SAMSUNG RL4353RBASL/EO, 435 l, 185 cm, A++, inox', '2.377,92 Lei', 'Combina frigorifica', 'Garden Fresh, XXL Bottle, Mix Zone', '473', '296', '4', '24', 'alb', '	70 x 70.5 x 185');
+
+INSERT INTO `cat4` (`title`, `codprodus`, `description`, `price`, `tip`, `functii`, `programe`, `putere`, `consumenergie`, `garantie`, `greutate`, `culoare`, `dimensiune`) VALUES ('cat4_2', 'MSVESL4201LO', 'Masina de spalat vase incorporabila ELECTROLUX ESL4201LO, 9 seturi, 5 programe de spalare, 45cm, A+', '1.499,90 Lei', 'Incorporabila', 'AirDryTechnology, SENSORCONTROL', 'Eco 50°|Intensiv 70°|Normal 65°|QuickPlus 65°|Clatire&Pauza', '1950', '0.79', '24', '38', 'gri', '44.6 x 55 x 81.8'),
+('cat4_3', 'MSVWKFO3O32PX', 'Masina de spalat vase WHIRLPOOL WKFO 3O32 P X, 14 seturi, 10 programe, 60cm, A+++', '2.849,90 Lei', 'Independenta', 'Indicator progres, Indicator de sare, Indicator digital al timpului ramas, Indicator luminos de clatire', 'Automate', '1930', '0.69', '24', '47', 'inox', '60 x 60 x 85'),
+('cat4_4', 'MSVWIO3T223PFGE', 'Masina de spalat vase incorporabila WHIRLPOOL WIO 3T223 PFG E, 14 seturi, 10 programe, 60 cm, A++', '1.699,90 Lei', 'Incorporabila', 'Al 6-lea simt, 3 temperaturi, AquaStop + AquaSafe, Indicator sare, Alarma sonora', 'Prespalare rece, Pahare, Rapid, Spalare Eco, Spalare zilnica, Program de noapte, Intensiv 65°C, Antibacterial, Autocuratare, PowerClean, Spalare Turbo,, Multizone', '2130', '1.02', '36', '35.5', 'alb', '59.5 x 55.5 x 82'),
+('cat4_5', 'MSVSMV45EX00E', 'Masina de spalat vase incorporabila BOSCH SMV45EX00E, 13 seturi, 5 programe, 60 cm, A++', '1.599,92 Lei', 'Independenta', '2 optiuni speciale: HygienePlus, Extra Uscare', 'Intensiv 70 °C, Auto 45-65 °C, Eco 50 °C, Pahare 40 °C, Program 1h 65 °C, Program special Igienizare masina', '2400', '0.99', '18', '35', 'alb', '59.8 x 55 x 81.5'),
+('cat4_6', 'MSVDSN26420X', 'Masina de spalat vase semi-incorporabila BEKO DSN26420X, 14 seturi, 6 programe, A++', '1.899,90 Lei', 'Semi-incorporabila', 'Temperaturi de spalare 35-40-50-60-65-70, TrayWash, Flexible HalfLoad,Time delay', '	All in 1, Quick&Shine, Eco 50°C, Auto Program, Intensive 70oC, Mini 30, Prespalare', '1930', '0.75', '24', '35', 'alb', '59.8 x 57 x 81.8');
+
+
+
+INSERT INTO `cat5` (`title`, `codprodus`, `description`, `price`, `tip`, `capacitate`, `tehnologii`, `putere`, `consumenergie`, `garantie`, `greutate`, `culoare`, `dimensiune`, `clasaenergetica`) VALUES ('cat5_2', 'CPBAKP744IX', 'Cuptor incorporabil GORENJE Simplicity II BO75SY2B, electric, 65l, 3300W, A, negru', '1.196,94 Lei', 'Electric', '65', 'AquaClean, Eco Email, Racire dinamica cuptor - DC, Usa rece, Filtru catalitic la ventilator', '3300', '0.85', '24', '35.2', 'Negru', '56-56.8 x 55 x 59-60', 'A+++'),
+('cat5_3', 'CPBBIM24301ZGCS', 'Cuptor incorporabil BEKO BIM24301ZGCS, 71l, A, 8 functii', '1.137,44 Lei', 'Electric', '71', '3D Cooking, Gatire conventionala, Gatire cu ventilare, Grill Low grill cu ventilare, Functie dezghetare (Defrost), Incalzire inferioara, Incalzire ventilata', '2500', '0.97', '12', '34', 'Negru', '59.5 x 56.4 x 59.5', 'A++'),
+('cat5_4', 'CPBBO637ORAB', 'Cuptor incorporabil GORENJE BO637ORAB, electric, 65l, 3300W, A, negru', '999,90 Lei', 'Electric', '65', 'Forma cuptorului tip HomeMade, SilverMatte email, Racire Dinamica Cutor DC+ ( ventilatorul de racire functioneaza pana cand temperatura din interiorul cuptorului ajunge la 60°C)','2800', '0.87', '24', '36', 'Negru', '59.5 x 56.4 x 59.5', 'A+++'),
+('cat5_5', 'CPBBIM25300XM', 'Cuptor incorporabil BEKO BIM25300XM, electric, 71l, 8 functii, A', '998,93 Lei', 'Electric', '65', 'Excellent Clean - Tehnologia Oleophobic Nano Coating', '2500', '0.77', '24', '34', 'Negru', '59.4 x 56.7 x 59.5', 'A+'),
+('cat5_6', 'CPBAKZM8480WH', 'Cuptor incorporabil WHIRLPOOL AKZM 8480 WH, electric, autocuratare, 73l, A+, alb', '1.999,90 Lei', 'Electric', '62', '	Tehnologia Al 6-lea Simt (30 de retete presetate), Soft Closing, Rafturi glisante', '3300', '0.85', '28', '31', 'Negru', '59.5 x 56.4 x 59.5', 'A+++'),
+('cat5_7', 'CPBNV70K2340RB', 'Cuptor incorporabil SAMSUNG NV70K2340RB/OL, electric, 70l, A, negru', '1.599,90 Lei', 'Electric', '70', 'Control digital, Curatare catalitica, Curatare cu aburi, Child Safety Lock, Ceas, Cronometru final', '3300', '0.88', '26', '34.2', 'Negru', '	59.5 x 56.6 x 59.5', 'A++'),
+('cat5_8', 'CPBGEBM34003X', 'Cuptor incorporabil GRUNDIG GEBM 34003 X, electric, 71l, A++', '1.599,90 Lei', 'Electric', '65', 'Incalzire inferioara, Gatire conventionala, Gatire conventionala cu ventilatie, Gatire cu ventilatie, 3-D, Low grill, Grill, Grill & ventilatie, Mentinere preparate la cald, Dezghetare, Pizza, Incalzire cu ventilatie eco, Booster', '3200', '0.72', '36', '33.2', 'Inox', '59.5 x 56.7 x 59.4', 'A+++'),
+('cat5_9', 'CPBBOES68181', 'Cuptor incorporabil HANSA BOES68181, electric, 62l, A', '599,90 Lei', 'Electric', '60', 'Incalzire in partea superioara si inferioara + ventilator, incalzire in partea superioara + grill (supergrill), Decongelare, Incalzire in partea inferioara, Incalzire rapida', '2900', '0.86', '32', '35.2', 'Negru', '59.2 x 54.4 x 59.5', 'A+++'),
+('cat5_10', 'CPBBO799S50X', 'Cuptor incorporabil GORENJE BO799S50X, electric, 75l, 3400W, A+, negru', '3.499,90 Lei', 'Electric', '75', 'Curatare SmartClean', '3150', '0.82', '24', '34.2', 'Negru', '59.5 x 54.6 x 59.5', 'A+++');

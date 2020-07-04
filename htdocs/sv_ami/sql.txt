@@ -1,0 +1,11 @@
+INSERT INTO `timages` (`title`, `img`, `description`, `price`) VALUES 
+('cat1_1', 'cat1_1.jpg', 'Masina de spalat frontala INDESIT IWSNE 61253 C ECO EU, 6kg, 1200rpm, A+++, alb', '947,92 Lei'),
+('cat1_2', 'cat1_2.jpg', 'Masina de spalat rufe cu uscator BEKO HTV 8733 XS0, 8/5kg, 1400rpm, A, alb', '1.678,93 Lei'),
+('cat1_3', 'cat1_3.jpg', 'Masina de spalat rufe frontala BEKO WRE6512BWW, 6kg, 1000rpm, A+++, alb', '987,90 Lei'),
+('cat1_4', 'cat1_4.jpg', 'Masina de spalat frontala SAMSUNG WW90K6414QX/LE, Addwash, 9kg, 1400rpm, A+++', '2.099,90 Lei'),
+('cat1_5', 'cat1_5.jpg', 'Masina de spalat rufe frontala SAMSUNG WW80J5345FW/LE, 1200 RPM, 8 kg, A+++, alb', '1.399,90 Lei'),
+('cat1_6', 'cat1_6.jpg', 'Masina de spalat frontala SAMSUNG WW60J4060LW, 6kg, 1000rpm, A+++, alb', '1.199,90 Lei'),
+('cat1_7', 'cat1_7.jpg', 'Masina de spalat rufe SAMSUNG WW90J5446EW/LE, 9kg, 1400rpm, A+++, alb', '1.999,90 Lei'),
+('cat1_8', 'cat1_8.jpg', 'Masina de spalat rufe frontala WHIRLPOOL FWSG71253WEU, 7kg, 1200rpm, A+++, alb', '1.193,42 Lei'),
+('cat1_9', 'cat1_9.jpg', 'Masina de spalat frontala MYRIA MY1503, 7kg, 1000rpm, A++, alb', '846,92 Lei'),
+('cat1_10', 'cat1_10.jpg', 'Masina de spalat rufe cu uscator WHIRLPOOL FWDG96148SBSEU 9/6kg', '1.999,90 Lei');

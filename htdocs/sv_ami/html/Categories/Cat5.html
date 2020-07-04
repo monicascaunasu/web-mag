@@ -1,0 +1,206 @@
+<style>
+    img.icon_website1
+{
+   margin-top: 40px;
+    margin-left: 0px;
+    width: 20%;
+}
+    img.icw2
+{
+   margin-top: 0px;
+    margin-left: 0px;
+    width: 20%;
+}
+        img.icw3
+{
+   margin-top: 20px;
+    margin-left: 0px;
+    width: 20%;
+}
+ .quantity{
+        position: absolute;
+        color:red;
+         font-weight: bold;
+       right:5.3%;
+        font-size: 30px;
+        top:16%;
+    }
+    .asd {
+color: black; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+.asd:hover {
+  color: white;
+  text-decoration: underline;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 255);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 138px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(0, 0, 165);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+    
+.tab{
+    position: absolute;
+    left:2%;
+    top:80%;
+}
+.gallery
+    {
+        width: 80%;
+        height: 60%;
+}
+    a:link{
+        color:black;   
+    }
+    a.go:hover{
+        color:red;
+    }
+     button.btn-link{
+    
+  border:none;
+  outline:none;
+  background:none;
+  cursor:pointer;
+  color:black;
+  padding:0;
+  text-align: left;
+  font-family:inherit;
+  font-size:inherit;
+}
+    button.btn-link:hover{
+        color:red;
+        text-decoration:underline;
+    }
+    
+</style>
+
+<html>
+<head>
+    <title> Shopping Website </title>
+    <link rel="stylesheet" type="text/css" href="../../style/style_Category1.css">
+    <body>
+    <div class="top">
+        <p class="b">
+          <?php
+
+session_start();
+$mysqli = new mysqli("localhost", "root", "toor", "demo");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+        
+            
+if (strlen($_SESSION['email'])==0) echo "<a href='http://localhost/html/Login.html' class='asd'>Hello,Sign In</a>";
+    else{
+    echo "Bun venit, "; echo $_SESSION['printname'];
+          if ($_SESSION['email']=='root')
+        {
+            echo"<br><a href='http://localhost/html/DisplayAccounts.html' class='asd'>Administrare Conturi</a>";
+            
+        }
+        echo"<br><a href='http://localhost/Scripts/DeleteActiveSession.php' class='asd'>Logout</a>";
+    }
+
+?>   
+        </p>
+    </div>
+	 <?php
+        if (strlen($_SESSION['cartquantity'])!=0)
+        {
+        echo "<p class='quantity'>";
+        echo $_SESSION['cartquantity'];
+        echo "</p>";
+        }
+        
+        ?>
+    <div>
+                  <?php
+   
+       if (strlen($_SESSION['email'])==0) echo "<img src='../../images/icon2.jpg' class='icon_website1'>";
+        else if (strcmp($_SESSION['email'],'root')==0) echo "<img src='../../images/icon2.jpg' class='icw2'>";
+        else echo "<img src='../../images/icon2.jpg' class='icw3'>";
+        
+?>
+         <form method="POST" action="SearchProduct.html">
+            <input type="text"  placeholder="Cauta dupa nume" class="c" autocomplete="off">
+             <?php 
+                if (strlen($_SESSION['email'])==0)
+                {
+                    echo "<img src='../../images/av5.png' class='av5'><a href='../Login.html' class='Contulmeu'>Contul meu</a>";
+                    echo "<img src='../../images/av6.png' class='av6'><a href='../Login.html' class='Cosulmeu'>Cosul meu</a>";
+                }
+             else
+             {
+                  echo "<img src='../../images/av5.png' class='av5'><a href='../ContulMeu.php' class='Contulmeu'>Contul meu</a>";
+                  echo "<img src='../../images/av6.png' class='av6'><a href='../ShoppingCart.html' class='Cosulmeu'>Cosul meu</a>";
+             }
+             ?>
+        </form>  
+<br>
+        
+<ul>
+  <li><a  href="../../Homepage.php">Acasa</a></li>
+    <li><a href="../../html/Category.html" class="active">Categorii</a></li>
+  <li><a href="../../html/Contact.html">Contact</a></li>
+  <li><a href="../../html/About.html">Despre noi</a></li>
+</ul>
+</div>
+            <br><br>
+            <p class="t"><b>Electrocasnice</b></p>
+            <hr color="black">
+    <br><br>
+
+        
+<table class="tab">
+<?php
+$dbc = new mysqli("localhost", "root", "toor", "demo");
+$sql="Select * from timages where title LIKE 'cat5_%'";
+$result=mysqli_query($dbc,$sql) or die("error");
+$i=4;
+              
+while($row=mysqli_fetch_assoc($result)){  
+    if ($i%4==0) echo "<tr>";
+    echo "<form action='../DisplayProductCat5.php' method='post'>";
+    
+    echo "<td> <img src='../../uploads/{$row['img']}' alt='{$row['title']}' class='gallery'><br><b>{$row['price']}</b><br> <button type='submit' name='product' value='{$row['title']}' class='btn-link'>{$row['description']}</button></td></form>";
+    if ($i%1==1) echo "</tr>";
+    $i++;
+
+}
+?>
+</table>
+        
+
+        
+     <br><br>
+    </body>
+</head>
+</html>

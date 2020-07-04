@@ -1,0 +1,175 @@
+<style>
+    img.icon_website1
+{
+   margin-top: 40px;
+    margin-left: 0px;
+    width: 20%;
+}
+    img.icw2
+{
+   margin-top: 0px;
+    margin-left: 0px;
+    width: 20%;
+}
+        img.icw3
+{
+   margin-top: 20px;
+    margin-left: 0px;
+    width: 20%;
+}
+ .quantity{
+        position: absolute;
+        color:red;
+         font-weight: bold;
+        right:5.3%;
+        font-size: 30px;
+        top:16%;
+    }
+    .asd {
+color: black; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+.asd:hover {
+  color: white;
+  text-decoration: underline;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 255);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 138px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(0, 0, 165);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+
+
+<html>
+<head>
+    <title> Shopping Website </title>
+    <link rel="stylesheet" type="text/css" href="../style/style_about.css">
+    <body>
+    <div class="top">
+        <p class="b">
+          <?php
+
+session_start();
+$mysqli = new mysqli("localhost", "root", "toor", "demo");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+        
+            
+if (strlen($_SESSION['email'])==0) echo "<a href='http://localhost/html/Login.html' class='asd'>Hello,Sign In</a>";
+    else{
+     echo "Bun venit, "; echo $_SESSION['printname'];
+          if ($_SESSION['email']=='root')
+        {
+            echo"<br><a href='http://localhost/html/DisplayAccounts.html' class='asd'>Administrare Conturi</a>";
+            
+        }
+        echo"<br><a href='http://localhost/Scripts/DeleteActiveSession.php' class='asd'>Logout</a>";
+    }
+
+?>  
+        </p>
+    </div>
+	 <?php
+        if (strlen($_SESSION['cartquantity'])!=0)
+        {
+        echo "<p class='quantity'>";
+        echo $_SESSION['cartquantity'];
+        echo "</p>";
+        }
+        
+        ?>
+    <div>
+            <?php
+   
+        if (strlen($_SESSION['email'])==0) echo "<img src='../images/icon2.jpg' class='icon_website1'>";
+        
+        else if (strcmp($_SESSION['email'],'root')==0) echo "<img src='../images/icon2.jpg' class='icw2'>";
+        else echo "<img src='../images/icon2.jpg' class='icw3'>";
+        
+?>
+         <form method="POST" action="SearchProduct.html">
+            <input type="text"  placeholder="Cauta dupa nume" class="c" autocomplete="off">
+            <?php 
+                if (strlen($_SESSION['email'])==0)
+                {
+                    echo "<img src='../images/av5.png' class='av5'><a href='Login.html' class='Contulmeu'>Contul meu</a>";
+                    echo "<img src='../images/av6.png' class='av6'><a href='Login.html' class='Cosulmeu'>Cosul meu</a>";
+                }
+             else
+             {
+                  echo "<img src='../images/av5.png' class='av5'><a href='ContulMeu.php' class='Contulmeu'>Contul meu</a>";
+                  echo "<img src='../images/av6.png' class='av6'><a href='ShoppingCart.html' class='Cosulmeu'>Cosul meu</a>";
+             }
+             ?>
+        </form>         
+<br>
+         
+<ul>
+  <li><a  href="../Homepage.php">Acasa</a></li>
+    <li><a href="../html/Category.html">Categorii</a></li>
+  <li><a href="../html/Contact.html">Contact</a></li> 
+  <li><a href="../html/About.html" class="active">Despre noi</a></li> 
+</ul>
+</div>
+       <br><br>
+        <p class="ab0">Altex - brand romanesc de peste 25 de ani</p>
+        <img src="../images/about1.png" class="about1">
+        <br><br><br><br>
+    <p class="ab1">Altex Romania reprezinta poate cel mai bun exemplu de antreprenoriat de succes din tara noastra. In peste 25 de ani de provocari si adaptari la schimbarile mediului de afaceri, Altex a trecut de la un business local de import de televizoare la liderul pietei romanesti de retail. Cum? Avand mereu o relatie buna cu clientul si adaptand infrastructura, astfel incat sa corespunda exigentelor retailului romanesc.
+
+Inca de la infiintare, compania Altex si-a propus sa ofere produse de calitate adecvate nevoilor consumatorilor si solutii de finantare acesibile.</p>
+        
+        <p class="ab2">Tehnologie disponibila tuturor clientilor</p>
+        <p class="ab1">Altex are misiunea de a face tehnologia disponibila tuturor clientilor la nivel national, facilitand astfel disponibilitatea serviciilor si produselor care le vor satisface cel mai bine nevoile. Conceptul omnichannel aduce confortul si usurinta in procesul de informare, luare a deciziei, interactiune cu produsul, cumparare si apoi utilizare.<br><br>
+
+Ca reprezentanti ai companiei, ne mandrim ca suntem una dintre cele mai importante companii private romanesti si liderul pietei de produse electronice, electrocasnice, IT&C si multimedia din Romania, cu o cifra de afaceri de circa 720 de milioane de euro si un profit net de peste 10 milioane de euro in 2018.<br><br>
+
+Reteaua noastra nationala de magazine (peste 100 de magazine Altex) se afla in continua expansiune, la fel si gamele de produse pe care le comercializam, la cele mai avantajoase preturi.<br><br>
+
+Suntem incantati ca putem oferi clientilor nostri o gama variata de electrocasnice mici, electrocasnice mari, produse cosmetice, parfumuri, obiecte de voiaj, trolere, produse pentru bebelusi, articole pentru copii, biciclete electrice, masini second hand, laptopuri, televizoare, telefoane, produse software, aspiratoare, fiare de calcat, aparate de aer conditionat, jocuri pentru PC si diverse console (cum ar fi PS sau Xbox), calculatoare pentru gaming si multe alte produse.<br><br>
+
+Gama de produse este atent aleasa, avand ca principal criteriu calitatea si performanta produsului.<br><br>
+        </p>
+        <p class="ab2">Solutii de finantare</p>
+        <p class="ab1">Pentru clientii nostri, am infiintat Credex, o companie de credite de consum, care sa va ajute cu solutii optime de finantare pentru cumpararea articolelor aflate la reduceri pe website-ul nostru si in reteaua nationala de magazine. Solutiile de finantare pe care le-am gandit sunt extrem de flexibile si se remarca prin dobanzile si ratele scazute.<br><br>
+
+Cei peste 4.000 de angajati din magazine, de la sediul central din Voluntari si in depozitele de marfa incearca in fiecare zi sa ofere cele mai bune experiente de interactiune cu brandul nostru.<br><br>
+
+Doar asa putem oferi „cel mai mic pret din Romania” si promite “de 2 x diferenta, daca gasesti in alta parte mai ieftin”.<br><br>
+
+Cu ajutorul colegilor din magazine si al produselor expuse completam oferta de pret cu o experienta reala, convingatoare, care sa dea clientului increderea ca a facut cea mai buna investitie.<br><br></p><br>
+        <p class="ab3">Indrazneste si vino alaturi de cei mai buni! - Vino in echipa Altex!</p>
+    </body>
+</head>
+</html>

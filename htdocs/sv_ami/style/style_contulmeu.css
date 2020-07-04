@@ -1,0 +1,291 @@
+
+body{
+    margin:0;
+    padding: 0;
+    background: url(../images/background/bg7.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+   
+}
+
+.ContulMeu{
+    position: absolute;
+    font-style: italic;
+    font-weight: bold;
+    color:black;
+    right: 20%;
+    top: 25%;
+
+}
+.Cosulmeu{
+    position: absolute;
+    color:black;
+    font-style: italic;
+    font-weight: bold;
+    right: 8%;
+    top: 25%;
+}
+
+p.b{
+ padding: 10px; 
+    background-color:blue;
+     font-style: italic;   
+}
+
+
+a {
+color: white; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.icon_website
+{
+   
+    padding-left: 1% ;
+    padding-top: 4%;
+    width: 20%;
+}
+
+.c{
+    text-align: left;
+    padding: 0 20 0;
+    position: absolute;
+    width: 700px;
+    height: 50px;
+    background-color:beige;
+    left:20%;
+    top: 22%;
+     background: #ccd9ff;
+    border-radius: 20px;
+    font-family: IsidoraMedium;
+    font-size: 20px;
+    box-sizing: border-box;
+   }  
+   
+.av5{
+    padding: 0 0 0;
+    position:  absolute;
+    width: 50px;
+    height: 50px;
+    left:81%;
+    top: 22%;
+}
+.av6 {
+    padding: 0 0 0;
+    position:  absolute;
+    width: 50px;
+    height: 50px;
+     left:92%;
+    top: 22%;
+}
+
+.table {
+    padding: 50 200 0;
+    left:20%;
+}
+
+p.t{
+    font-size:30px;
+}
+p.Catergory{
+    font-size:24px;
+    text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+
+
+p.a{
+    font-weight: bolder;
+    padding: 20px 20px 0px;
+    font-size: 24px;
+}
+p.id1{
+    font-weight: bold;
+    padding: 0px 20px 0px;
+    font-size: 20px;
+}
+
+p.id2{
+    
+    padding: 0px 20px 0px;
+    font-size: 16px;
+}
+
+.sender{
+     text-align: left;
+    padding: 0 20 0;
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    background-color:beige;
+    left:3%;
+    top: 95%;
+     background: #ccd9ff;
+    border-radius: 20px;
+    font-family: IsidoraMedium;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+p.s1{
+    padding: 0px 20px 0px;
+    
+}
+.s3{
+    width: 350px;
+    height: 200px;
+}
+
+p.bb{
+     position: absolute;
+    left: 50%;
+    top:80%;
+}
+
+
+.tab{
+    padding: 20px 20px 0;
+}
+.but{
+    padding: 0px 20px 0px;
+    position: absolute;
+    left:11%;
+}
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+div.wrapper {
+    padding: 0px 0px 0;
+  margin: 0px auto;
+  width: 350px;
+    position: absolute;
+    left:5%;
+    color:red;
+}
+
+.xx{
+    color:white;
+}
+nav.vertical {
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,.15);
+  overflow: hidden;
+  text-align: center;
+    color:red;
+}
+
+h1{
+    
+    margin:0;
+    padding: 0 0 20px;
+    text-align: left;
+    font-size: 22px;
+    color:orangered;
+}
+
+.AccountDetail p{
+    color:black;
+    margin:0;
+    
+    padding: 0 0 0;
+    font-weight: bold;
+}
+AccountDetail input{
+    
+    width: :100%;
+    margin-bottom: 20px;
+    
+}
+
+.AccountDetail input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom:  1px solid #fff;
+    
+    background: transparent;
+    outline:none;
+    height: 30px;
+    color: mediumblue;
+    font-size: 16px;
+    
+    
+}
+
+.AccountDetail input[type="submit"]
+{
+    padding: 0 0 0;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 150px;
+    background: DodgerBlue;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    
+    
+}
+
+.AccountDetail input[type="submit"]:hover
+{
+    cursor: pointer;
+    width: 150px;
+    background: green;
+    
+}
+
+.AccountDetail a{
+    padding: 0 0 20px;
+    text-decoration: none;
+    font-size:14px;
+    line-height: 20px;
+    color: darkred;
+    position: absolute;
+    left:30%;
+}
+padding: 0 0 20px;
+.loginbox a:hover{
+    color: #ffc107;
+}
+.AccountDetail
+{
+    
+    width: 320px;
+    height: 430px;
+    color: #fff;
+    top: 65%;
+    left: 30%;
+    position: absolute;
+    transform: translate(37%,-34%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+        
+}
+
+
+    
+}
+

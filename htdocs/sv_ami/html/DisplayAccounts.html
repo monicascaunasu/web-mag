@@ -1,0 +1,223 @@
+<style>
+    img.icon_website1
+{
+   margin-top: 40px;
+    margin-left: 0px;
+    width: 20%;
+}
+    img.icw2
+{
+   margin-top: 0px;
+    margin-left: 0px;
+    width: 20%;
+}
+        img.icw3
+{
+   margin-top: 20px;
+    margin-left: 0px;
+    width: 20%;
+}
+    br.tabspace{
+         display: block;
+   margin: 30px 20px;
+        line-height:220px;
+    }
+     .quantity{
+        position: absolute;
+        color:red;
+         font-weight: bold;
+        right:5.3%;
+        font-size: 30px;
+        top:16%;
+    }
+    .tablee {
+  border-collapse: collapse;
+        position: absolute;
+    left:10%;
+    top:80%;
+        width: 70%;
+}
+    .plusminus{
+        font-size: 20px;
+        color:black;
+        font-weight: bold;
+    }
+
+    
+.tablee, .tdd {
+  border: 1px solid black;
+     padding: 15px;
+  text-align: left;
+}
+  
+    .asd {
+color: black; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+.asd:hover {
+  color: white;
+  text-decoration: underline;
+}
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 255);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 138px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(0, 0, 165);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+    
+</style>
+
+
+
+<html>
+<head>
+    <title> Shopping Website </title>
+    <link rel="stylesheet" type="text/css" href="../style/style_ShoppingCart.css">
+    <body>
+    <div class="top">
+        <p class="b">
+  <?php
+
+session_start();
+$mysqli = new mysqli("localhost", "root", "toor", "demo");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+        
+            
+if (strlen($_SESSION['email'])==0) echo "<a href='http://localhost/html/Login.html' class='asd'>Hello,Sign In</a>";
+    else{
+     echo "Bun venit, "; echo $_SESSION['printname'];
+          if ($_SESSION['email']=='root')
+        {
+            echo"<br><a href='http://localhost/html/DisplayAccounts.html' class='asd'>Administrare Conturi</a>";
+            
+        }
+        echo"<br><a href='http://localhost/Scripts/DeleteActiveSession.php' class='asd'>Logout</a>";
+    }
+
+?>   
+       
+        </p>
+    </div>
+	 <?php
+        if (strlen($_SESSION['cartquantity'])!=0)
+        {
+        echo "<p class='quantity'>";
+        echo $_SESSION['cartquantity'];
+        echo "</p>";
+        }
+        
+        ?>
+        
+    <div>
+            <?php
+   
+       if (strlen($_SESSION['email'])==0) echo "<img src='../images/icon2.jpg' class='icon_website1'>";
+        else if (strcmp($_SESSION['email'],'root')==0) echo "<img src='../images/icon2.jpg' class='icw2'>";
+        else echo "<img src='../images/icon2.jpg' class='icw3'>";
+        
+?>
+         <form method="POST" action="search.php">
+ 
+            <input type="text"  placeholder="Cauta dupa nume" class="c" autocomplete="off">
+             <?php 
+                if (strlen($_SESSION['email'])==0)
+                {
+                    echo "<img src='../images/av5.png' class='av5'><a href='Login.html' class='Contulmeu'>Contul meu</a>";
+                    echo "<img src='../images/av6.png' class='av6'><a href='Login.html' class='Cosulmeu'>Cosul meu</a>";
+                }
+             else
+             {
+                  echo "<img src='../images/av5.png' class='av5'><a href='ContulMeu.php' class='Contulmeu'>Contul meu</a>";
+                  echo "<img src='../images/av6.png' class='av6'><a href='ShoppingCart.html' class='Cosulmeu'>Cosul meu</a>";
+             }
+             ?>
+             
+        </form>
+       
+       
+            
+<br>
+
+
+            
+<ul>
+  <li><a  href="../Homepage.php">Acasa</a></li>
+    <li><a href="../html/Category.html">Categorii</a></li>
+   
+  <li><a href="../html/Contact.html">Contact</a></li>
+  <li><a href="../html/About.html">Despre noi</a></li>
+</ul>
+</div>
+            <br><br>
+            <p class="t"><b>Administrare Conturi</b></p>
+            <hr color="black">
+    <br><br>
+
+        
+
+     <table border='1' class="tablee">
+  <tr>
+    <td class='tdd'><center>Nume</center></td>
+    <td class='tdd'><center>Prenume</center></td>
+    <td class='tdd'><center>Email</center></td>
+    <td class='tdd'><center>Telefon</center></td>
+    <td class='tdd'><center>Cantitate cos</center></td>
+  </tr>
+  <tr>
+<?php 
+$email=$_SESSION['email'];
+$mysqli = new mysqli("localhost", "root", "toor", "demo");
+$result = $mysqli->query("select * from loginform");
+while($row = mysqli_fetch_array($result))
+{
+if ((int)$row[5]==0) $val='-';
+else $val=$row[5];
+echo "<tr><td class='tdd'><center>{$row[0]}</center></td><td class='tdd'><center>{$row[1]}</center></td><td class='tdd'><center>{$row[2]}</center></td><td class='tdd'><center>{$row[3]}</center></td><td class='tdd'><center>$val</center></td>";
+echo "<td><form onsubmit='DeleteAccount();' method='POST'>&nbsp;&nbsp;&nbsp;<button type='submit' name='email' value='{$row[2]}' class='btn-link' formaction='../Scripts/DeleteAccount.php'> X</button></form></td>";
+//<form action='#' method='POST'><button type='submit' name='orderid' value='{$row[7]}' class='btn-link' //formaction='../Scripts/IncreaseQuantityItem.php'>+</button></form>";
+
+echo"</tr>";
+}
+?>
+  
+</table>
+<script>
+function DeleteAccount() {
+ alert("Esti pe cale sa stergi un cont. Esti sigur de aceasta actiune ?");
+}
+</script>
+
+     <br><br>
+    </body>
+</head>
+</html>

@@ -1,0 +1,139 @@
+
+body{
+    margin:0;
+    padding: 0;
+    background: url(../images/background/bg7.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+   
+}
+
+.ContulMeu{
+    position: absolute;
+    font-style: italic;
+    font-weight: bold;
+    color:black;
+    right: 20%;
+    top: 25%;
+
+}
+.Cosulmeu{
+    position: absolute;
+    color:black;
+    font-style: italic;
+    font-weight: bold;
+    right: 8%;
+    top: 25%;
+}
+
+p.b{
+ padding: 10px; 
+    background-color:blue;
+     font-style: italic;   
+}
+
+
+a {
+color: white; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.icon_website
+{
+   
+    padding-left: 1% ;
+    padding-top: 4%;
+    width: 20%;
+}
+
+.c{
+    text-align: left;
+    padding: 0 20 0;
+    position: absolute;
+    width: 700px;
+    height: 50px;
+    background-color:beige;
+    left:20%;
+    top: 22%;
+     background: #ccd9ff;
+    border-radius: 20px;
+    font-family: IsidoraMedium;
+    font-size: 20px;
+    box-sizing: border-box;
+   }  
+   
+.av5{
+    padding: 0 0 0;
+    position:  absolute;
+    width: 50px;
+    height: 50px;
+    left:81%;
+    top: 22%;
+}
+.av6 {
+    padding: 0 0 0;
+    position:  absolute;
+    width: 50px;
+    height: 50px;
+     left:92%;
+    top: 22%;
+}
+
+.table {
+    padding: 50 200 0;
+    left:20%;
+}
+
+p.t{
+    font-size:30px;
+}
+p.Catergory{
+    font-size:24px;
+    text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+img.about1{
+    width: 75%;
+    height: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p.ab0{
+    font-size: 16px;
+    padding: 10 13% 0;
+     font-weight: bold;
+    font-size: 24px;
+}
+p.ab1{
+    font-size: 16px;
+    padding: 10px 10% 0;
+}
+
+p.ab2{
+    padding: 10px 10% 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+p.ab3{
+    padding: 0 22% 0;
+    font-weight: bold;
+    font-size: 24px;
+    color:red;
+}
+

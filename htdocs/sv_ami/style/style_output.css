@@ -1,0 +1,54 @@
+
+body{
+    margin:0;
+    padding: 0;
+
+    background-size: cover;
+    background-position:center;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+  background-size: auto;
+     background-size: 100% 100%;
+}
+
+p.a{
+    font-weight: bold;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+}
+
+
+.back input{
+    position: absolute;
+    left:40%;
+    top:38%;
+    width: :100%;
+    margin-bottom: 20px;
+    
+}
+
+
+
+.back input[type="submit"]
+{
+    padding: 0 0 0;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 150px;
+    background: red;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    
+}
+
+.back input[type="submit"]:hover
+{
+    cursor: pointer;
+    width: 150px;
+    background:green;
+  
+}
+

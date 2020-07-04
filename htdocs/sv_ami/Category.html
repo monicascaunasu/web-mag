@@ -1,0 +1,131 @@
+<style>
+   
+    
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 255);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 138px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(0, 0, 165);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+    
+</style>
+
+
+
+<html>
+<head>
+    <title> Shopping Website </title>
+    <link rel="stylesheet" type="text/css" href="../style/style_category.css">
+    <body>
+    <div class="top">
+        <p class="b">
+  <?php
+
+session_start();
+$mysqli = new mysqli("localhost", "root", "toor", "demo");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+        
+            
+if (strlen($_SESSION['email'])==0) echo "<a href='http://localhost/html/Login.html' class='asd'>Hello,Sign In</a>";
+    else{
+     echo "Bun venit, ";echo $_SESSION['email']; echo"<br><a href='http://localhost/Scripts/DeleteActiveSession.php' class='asd'>Logout</a>";
+    }
+
+?>   
+       
+        </p>
+    </div>
+        
+    <div>
+            <img src="../images/icon2.jpg" class="icon_website">
+         <form method="POST" action="search.php">
+ 
+            <input type="text"  placeholder="Cauta dupa nume" class="c" autocomplete="off">
+             <img src="../images/av5.png" class="av5"><a href="ContulMeu.php" class="Contulmeu">Contul meu</a>
+             <img src="../images/av6.png" class="av6"><a href="ShoppingCart.html" class="Cosulmeu">Cosul meu</a>
+             
+        </form>
+       
+       
+            
+<br>
+
+
+            
+<ul>
+  <li><a  href="../Homepage.php">Acasa</a></li>
+    <li><a href="../html/Category.html" class="active">Categorii</a></li>
+   
+  <li><a href="../html/Contact.html">Contact</a></li>
+  <li><a href="../html/About.html">Despre noi</a></li>
+</ul>
+</div>
+            <br><br>
+            <p class="t"><b>Electrocasnice</b></p>
+            <hr color="black">
+    <br><br>
+
+        
+<div class="table">
+      <table> 
+  <tr>
+    <td>
+        <p class="Catergory"><a href="../html/Categories/Cat1.html" class="link">Masini de spalat rufe</a>
+        </p><img src="../images/elem/elem1.jpg" class="center"></td>
+    <td>
+          <p class="Catergory"><a href="../html/Categories/Cat2.html" class="link">Uscatoare de rufe</a></p><img src="../images//elem/elem2.jpg" class="center"></td>
+    <td>
+        <p class="Catergory"><a href="../html/Categories/Cat3.html" class="link">Aparate frigorifice
+           </a></p><img src="../images/elem/elem3.jpg" class="center" style="width:50%;height:80%;"></td>
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat4.html" class="link">Masini de spalat vasele</a></p><img src="../images/elem/elem4.jpg" class="center"></td>
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat5.html" class="link">Cupotoare incorporabile</a></p><img src="../images/elem/elem5.jpg" class="center"></td>
+  </tr>
+         <tr class="spacer"><td></td></tr>
+  <tr class="spaceUnder">
+       
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat6.html" class="link">Plite incorporabile</a></p><img src="../images/elem/elem6.jpg" class="center"></td>
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat7.html" class="link">Cuptoare cu microunde incorporabile</a></p><img src="../images/elem/elem7.jpg" class="center"></td>
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat8.html" class="link">Espresoare incorporabile</a></p><img src="../images/elem/elem8.jpg" class="center" style="width:50%;height:80%;"></td>
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat9.html" class="link">Aragazuri</a></p><img src="../images/elem/elem9.jpg" class="center"></td>
+      <td>
+          <p class="Catergory"><a href="../html/Categories/Cat10.html" class="link">Hote</a></p><img src="../images/elem/elem10.jpg" class="center" style="width:50%;height:80%;"></td>
+  </tr> 
+          </table>
+        </div>
+
+     <br><br>
+    </body>
+</head>
+</html>

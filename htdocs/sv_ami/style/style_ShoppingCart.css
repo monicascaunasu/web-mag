@@ -1,0 +1,129 @@
+
+body{
+    margin:0;
+    padding: 0;
+    background: url(../images/background/bg7.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+   
+}
+
+.ContulMeu{
+    position: absolute;
+    font-style: italic;
+    font-weight: bold;
+    color:black;
+    right: 20%;
+    top: 25%;
+
+}
+.Cosulmeu{
+    position: absolute;
+    color:black;
+    font-style: italic;
+    font-weight: bold;
+    right: 8%;
+    top: 25%;
+}
+
+p.b{
+ padding: 10px; 
+    background-color:blue;
+     font-style: italic;   
+}
+
+
+a {
+color: red; 
+  background-color: transparent; 
+    text-decoration: none;
+}
+
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.icon_website
+{
+   
+    padding-left: 1% ;
+    padding-top: 4%;
+    width: 20%;
+}
+
+.c{
+    text-align: left;
+    padding: 0 20 0;
+    position: absolute;
+    width: 700px;
+    height: 50px;
+    background-color:beige;
+    left:20%;
+    top: 22%;
+     background: #ccd9ff;
+    border-radius: 20px;
+    font-family: IsidoraMedium;
+    font-size: 20px;
+    box-sizing: border-box;
+   }  
+   
+.av5{
+    padding: 0 0 0;
+    position:  absolute;
+    width: 50px;
+    height: 50px;
+    left:81%;
+    top: 22%;
+}
+.av6 {
+    padding: 0 0 0;
+    position:  absolute;
+    width: 50px;
+    height: 50px;
+     left:92%;
+    top: 22%;
+}
+
+
+p.t{
+    font-size:30px;
+}
+p.Catergory{
+    font-size:24px;
+    text-align: center;
+}
+a.Category{
+    color: red;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+
+
+.link {
+  text-decoration: none;
+    color:black;
+}
+
+a.visited {
+  text-decoration: none;
+    color:black;
+}
+
+.link.hover {
+  text-decoration: underline;
+    color:red;
+}
+
+a.active {
+    
+  text-decoration: underline;
+}
